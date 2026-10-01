@@ -20,32 +20,7 @@ const [posts, setPosts] = useState([
         text:"Скиньте 5 рублей пжпж",
         title: "Срочная хелпа нужна",
         author: "Вась"
-    },
-    {
-        id: 4,
-        text:"lorem upsum",
-        title: "Hello",
-        author: "Oppo"
-    },
-    {
-        id: 5,
-        text:"lorem upsum",
-        title: "Hello",
-        author: "Oppo"
-    },
-    {
-        id: 6,
-        text:"lorem upsum",
-        title: "Hello",
-        author: "Oppo"
-    },
-    {
-        id: 7,
-        text:"lorem upsum",
-        title: "Hello",
-        author: "Oppo"
     }
-
 ]);
 
 const [title, setTitle] = useState("");
@@ -76,20 +51,8 @@ function deletePost(id) {
                     <h2>{props.author}</h2>
                     <p>{props.tag}</p>
                 </div>
-                <form className="post-form" onSubmit={addPost}>
-                    <input type="text" placeholder="Заголовок" value={title} onChange={(event) => setTitle(event.target.value)}/>
-                    <textarea placeholder="Текст поста" value={text} onChange={(event) => setText(event.target.value)}></textarea>
-                    <button type="submit">Опубликовать</button>
-                </form>
+                <p className="profile-description"></p>
             </div>
-            {posts.map((post) => (
-                <Post key={post.id} 
-                id = {post.id}
-                author = {post.author} 
-                title={post.title} 
-                text={post.text} 
-                onDelete={deletePost}/>
-            ))}
         </section>
     )
 }
