@@ -60,6 +60,10 @@ function Profile() {
     setPosts(posts.filter((post) => post.id !== id));
   }
 
+  function deleteAllPost() {
+    setPosts([])
+  }
+
   return (
     <div style={{ width: "100%", maxWidth: "600px" }}>
       <ProfileCard author="Крутыш" tag="@yo"/>
@@ -82,6 +86,9 @@ function Profile() {
             onChange={(event) => setText(event.target.value)}
           />
           <button type="submit">Опубликовать</button>
+          <button className="delete-button" onClick={() => deleteAllPost()}>
+                Удалить все
+            </button>
         </form>
 
         <h2 className="section-subtitle">Мои публикации</h2>
