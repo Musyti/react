@@ -1,18 +1,45 @@
 import ProfileCard from "../components/ProfileCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Post from "../components/Post";
 
 function Profile() {
-  const [posts, setPosts] = useState([
+  // const [posts, setPosts] = useState([
+  //   {
+  //     id: 1,
+  //     text: "В Барнауле школьник принес учебник. Все были в шоке от...",
+  //     title: "Секрет быстрого набора массы",
+  //     author: "Eminem",
+  //   },
+  // ]);
+  const [posts, setPosts] = useState( () => 
+  {
+    const savedPosts = localStorage.getItem("posts");
+    if (savedPosts) {
+      return JSON.parse(savedPosts)
+    }
+  
+    
+    return [
     {
       id: 1,
       text: "В Барнауле школьник принес учебник. Все были в шоке от...",
       title: "Секрет быстрого набора массы",
       author: "Eminem",
     },
-  ]);
+  ]
+});
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
+
+  // useEffect(() => {
+  //   console.log("Изменились посты")
+  // }, [posts]);
+  useEffect(() => {
+    localStorage.setItem(
+      "posts",
+      JSON.stringify(posts)
+    );
+  }, [posts]);
 
   function addPost(event) {
     event.preventDefault();
@@ -59,7 +86,8 @@ function Profile() {
 
         <h2 className="section-subtitle">Мои публикации</h2>
         <div className="feed">
-          {posts.map((post) => (
+          {posts.length > 0 ? (
+          posts.map((post) => (
             <Post
               key={post.id}
               id={post.id}
@@ -68,7 +96,10 @@ function Profile() {
               text={post.text}
               onDelete={deletePost}
             />
-          ))}
+          ))
+        ) : (
+          <p>Опубликуйте свой первый пост</p>
+        )}
         </div>
       </section>
     </div>

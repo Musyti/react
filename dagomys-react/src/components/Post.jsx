@@ -7,9 +7,12 @@ function Post(props) {
             <p className = "post-text">{props.text}</p>
             <p className="post-author">{props.author}</p>
             <Actions />
-            <button className="delete-button" onClick={() => props.onDelete(props.id)}>
+            {props.onDelete && (
+                <button className="delete-button" onClick={() => props.onDelete(props.id)}>
                 Удалить
             </button>
+            )}
+            
         </article>
 
         
