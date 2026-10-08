@@ -86,7 +86,7 @@ function Profile() {
             onChange={(event) => setText(event.target.value)}
           />
           <button type="submit">Опубликовать</button>
-          <button className="delete-button" onClick={() => deleteAllPost()}>
+          <button className="delete-all-button" onClick={() => deleteAllPost()}>
                 Удалить все
             </button>
         </form>
