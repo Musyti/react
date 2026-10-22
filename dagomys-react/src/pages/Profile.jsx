@@ -1,6 +1,7 @@
 import ProfileCard from "../components/ProfileCard";
 import { useState, useEffect } from "react";
 import Post from "../components/Post";
+import  { usePosts } from "../context/PostsContext" 
 
 function Profile() {
   // const [posts, setPosts] = useState([
@@ -11,35 +12,36 @@ function Profile() {
   //     author: "Eminem",
   //   },
   // ]);
-  const [posts, setPosts] = useState( () => 
-  {
-    const savedPosts = localStorage.getItem("posts");
-    if (savedPosts) {
-      return JSON.parse(savedPosts)
-    }
+//   const [posts, setPosts] = useState( () => 
+//   {
+//     const savedPosts = localStorage.getItem("posts");
+//     if (savedPosts) {
+//       return JSON.parse(savedPosts)
+//     }
   
     
-    return [
-    {
-      id: 1,
-      text: "В Барнауле школьник принес учебник. Все были в шоке от...",
-      title: "Секрет быстрого набора массы",
-      author: "Eminem",
-    },
-  ]
-});
+//     return [
+//     {
+//       id: 1,
+//       text: "В Барнауле школьник принес учебник. Все были в шоке от...",
+//       title: "Секрет быстрого набора массы",
+//       author: "Eminem",
+//     },
+//   ]
+// });
+  const {posts, setPosts} = usePosts();
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
 
   // useEffect(() => {
   //   console.log("Изменились посты")
   // }, [posts]);
-  useEffect(() => {
-    localStorage.setItem(
-      "posts",
-      JSON.stringify(posts)
-    );
-  }, [posts]);
+  // useEffect(() => {
+  //   localStorage.setItem(
+  //     "posts",
+  //     JSON.stringify(posts)
+  //   );
+  // }, [posts]);
 
   function addPost(event) {
     event.preventDefault();

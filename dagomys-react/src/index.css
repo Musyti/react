@@ -358,3 +358,147 @@ box-shadow: 0 5px 0 #b58c28;
   background: #fff4bc;
   box-shadow: 0 3px 0 var(--ink);
 }
+
+/* === ТЕМНАЯ ТЕМА === */
+
+.app {
+  width: 100%;
+}
+
+.app.theme-dark {
+  --ink: #e2f1f8;
+  --ink-soft: #9ec5d6;
+  --sky: #162a36;
+  --paper: #1e3545;
+  --grass: #2f5e3d;
+  --grass-dark: #74c365;
+  --sun: #e0b341;
+  --coral: #d96257;
+
+  background-color: #0f1e26;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px),
+    linear-gradient(180deg, #0d1b22 0%, #162a36 58%, #1a3026 100%);
+  background-size: 28px 28px, 100% 100%;
+  background-attachment: fixed;
+  color: var(--ink);
+}
+
+/* Шапка и навигация */
+.app.theme-dark .header {
+  border-bottom-color: #0b151b;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+.app.theme-dark .header h1 {
+  text-shadow: 2px 2px 0 rgba(11, 21, 27, 0.9);
+}
+
+.app.theme-dark .header nav a {
+  box-shadow: 0 3px 0 #0b151b;
+}
+
+.app.theme-dark .header nav a:hover {
+  color: #16262e;
+  box-shadow: 0 5px 0 #0b151b;
+}
+
+.app.theme-dark .header nav a.active {
+  background: #325369;
+  color: var(--sun);
+  box-shadow: 0 3px 0 #0b151b;
+}
+
+/* Карточки и разделители */
+.app.theme-dark .profile-card,
+.app.theme-dark .page-card {
+  border-color: #466d85;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.45);
+}
+
+.app.theme-dark .profile,
+.app.theme-dark .page-title {
+  border-bottom-color: #436e4f;
+}
+
+/* Аватар (сохраняем темные глазки и улыбку на фоне солнца) */
+.app.theme-dark .avatar {
+  border-color: #0b151b;
+}
+
+.app.theme-dark .avatar::before {
+  background: #1e3545;
+  box-shadow: 15px 0 0 #1e3545;
+}
+
+.app.theme-dark .avatar::after {
+  border-bottom-color: #1e3545;
+}
+
+/* Посты */
+.app.theme-dark .post {
+  background: #162834;
+  border-color: #466d85;
+  border-left-color: var(--grass-dark);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);
+}
+
+.app.theme-dark .post:hover {
+  box-shadow: 4px 5px 0 rgba(0, 0, 0, 0.55);
+}
+
+.app.theme-dark .post-author {
+  color: #ff9c91;
+}
+
+/* Форма и поля ввода */
+.app.theme-dark .post-form input,
+.app.theme-dark .post-form textarea {
+  background: #13232e;
+  border-color: #3b5c70;
+  color: var(--ink);
+}
+
+.app.theme-dark .post-form input::placeholder,
+.app.theme-dark .post-form textarea::placeholder {
+  color: #6c92a6;
+}
+
+.app.theme-dark .post-form input:focus,
+.app.theme-dark .post-form textarea:focus {
+  border-color: var(--grass-dark);
+  box-shadow: 0 0 0 3px rgba(116, 195, 101, 0.25);
+}
+
+/* Кнопки */
+.app.theme-dark .post-form button:not(.delete-button):not(.delete-all-button) {
+  background: #4b963f;
+  color: #fffef4;
+  box-shadow: 0 3px 0 #265220;
+}
+
+.app.theme-dark .post-form button:not(.delete-button):not(.delete-all-button):hover {
+  box-shadow: 0 5px 0 #265220;
+}
+
+.app.theme-dark .actions button {
+  color: #16262e;
+  box-shadow: 0 3px 0 #8f6b14;
+}
+
+.app.theme-dark .actions button:hover {
+  background: #f2c955;
+  box-shadow: 0 5px 0 #8f6b14;
+}
+
+.app.theme-dark .delete-button,
+.app.theme-dark .delete-all-button {
+  color: #16262e;
+  box-shadow: 0 3px 0 #8c352d;
+}
+
+.app.theme-dark .delete-button:hover,
+.app.theme-dark .delete-all-button:hover {
+  background: #ff8176;
+  box-shadow: 0 5px 0 #8c352d;
+}
