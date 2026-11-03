@@ -2,6 +2,7 @@ import ProfileCard from "../components/ProfileCard";
 import { useState, useEffect } from "react";
 import Post from "../components/Post";
 import  { usePosts } from "../context/PostsContext" 
+import { useUser } from "../context/UserContext";
 
 function Profile() {
   // const [posts, setPosts] = useState([
@@ -32,7 +33,7 @@ function Profile() {
   const {posts, setPosts} = usePosts();
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
-
+  const {userName, avatar} = useUser();
   // useEffect(() => {
   //   console.log("Изменились посты")
   // }, [posts]);
@@ -51,7 +52,7 @@ function Profile() {
       id: Date.now(),
       title: title,
       text: text,
-      author: "Крутыш",
+      author: userName,
     };
     setPosts([newPost, ...posts]);
     setTitle("");
@@ -68,7 +69,7 @@ function Profile() {
 
   return (
     <div style={{ width: "100%", maxWidth: "600px" }}>
-      <ProfileCard author="Крутыш" tag="@yo"/>
+      <ProfileCard author={userName} tag="@yo" avatar={avatar}/>
 
       <section className="page-card" style={{ marginTop: "25px" }}>
         <h2 className="section-subtitle" style={{ marginTop: 0 }}>

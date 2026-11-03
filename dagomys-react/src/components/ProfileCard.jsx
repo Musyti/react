@@ -1,5 +1,8 @@
+import React from "react";
+import { useUser } from "../context/UserContext";
 import { useState } from "react";
 import Post from "./Post"
+import useUserProfile from "../hooks/useUserProfile";
 
 function ProfileCard(props) {
 const [posts, setPosts] = useState([
@@ -25,7 +28,7 @@ const [posts, setPosts] = useState([
 
 const [title, setTitle] = useState("");
 const [text, setText] = useState("");
-
+const {userName, avatar} = useUserProfile();
 function addPost(event) {
     event.preventDefault();
 
@@ -33,7 +36,7 @@ function addPost(event) {
         id: Date.now(),
         title: title,
         text: text,
-        author: "Крутыш"
+        author: userName
     };
     setPosts([...posts, newPost]);
     setTitle("");
@@ -46,7 +49,19 @@ function deletePost(id) {
     return (
         <section className="profile-card">
             <div className="profile"> 
-                <div className="avatar">icon</div>
+                <div className={`avatar ${avatar ? 'has-image' : ''}`}>
+                     {avatar ? (
+                    <img
+                        src={avatar}
+                        alt="Аватар пользователя"
+                        className="avatar-image"
+                    />
+                ) : (
+                    <div className="avatar-placeholder">
+                        {userName.charAt(0).toUpperCase() || "?"}
+                    </div>
+                )}  
+                </div>
                 <div className = "profile-info">
                     <h2>{props.author}</h2>
                     <p>{props.tag}</p>
