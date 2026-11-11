@@ -5,6 +5,8 @@ import Profile from "./pages/Profile"
 import Home from "./pages/Home"
 import Settings from "./pages/Settings"
 import About from "./pages/About"
+import WeatherPage from "./pages/WeatherPage"
+import CurrencyPage from "./pages/CurrencyPage"
 import './App.css'
 import { useTheme } from "./context/ThemeContext";
 
@@ -25,6 +27,8 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/about" element={<About />} />
+          <Route path="/weather" element={<WeatherPage />} />
+          <Route path="/currency" element={<CurrencyPage />} />
         </Routes>
         </PostsProvider>
         </UserProvider>

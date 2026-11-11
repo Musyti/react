@@ -13,6 +13,8 @@ function Header() {
         <Link to="/profile">Профиль</Link>
         <Link to="/settings">Настройки</Link>
         <Link to="/about">О проекте</Link>
+        <Link to="/weather">Погода</Link>
+        <Link to="/currency">Курс валют</Link>
         <button className="toggle" onClick={toggleTheme}>
                     {theme === "light" ? "🌙" : "🌞"}
                 </button>

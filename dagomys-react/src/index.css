@@ -485,3 +485,264 @@ box-shadow: 0 5px 0 #b58c28;
 .avatar.has-image::after {
   display: none;
 }
+
+/* =========================================
+   СТРАНИЦА КУРСА ВАЛЮТ (CurrencyPage)
+   ========================================= */
+
+.currency-page {
+  width: 100%;
+  max-width: 600px;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 5px 5px 0 rgba(37, 70, 83, 0.22);
+  margin-bottom: 25px;
+}
+
+.currency-page h2 {
+  margin: 0 0 15px;
+  color: var(--ink);
+  font-size: 24px;
+  font-family: "Comic Sans MS", "Trebuchet MS", cursive;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed #a8cf72;
+}
+
+.currency-page p {
+  color: var(--ink-soft);
+  margin: 0 0 15px;
+  font-weight: 500;
+}
+
+.currency-page .error {
+  color: var(--coral);
+  font-weight: bold;
+}
+
+.currency-page table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fffef8;
+  box-shadow: 3px 3px 0 rgba(37, 70, 83, 0.15);
+}
+
+.currency-page th,
+.currency-page td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid #d5ebd7;
+}
+
+.currency-page th {
+  background: var(--grass);
+  color: var(--ink);
+  font-weight: bold;
+  border-bottom: 2px solid var(--ink);
+}
+
+.currency-page tr:last-child td {
+  border-bottom: none;
+}
+
+.currency-page tbody tr {
+  transition: background 0.2s ease;
+}
+
+.currency-page tbody tr:hover {
+  background: #f6ffe8;
+}
+
+.currency-page td:first-child {
+  font-weight: bold;
+  color: var(--ink);
+}
+
+.currency-page td:not(:first-child) {
+  color: var(--ink-soft);
+  font-family: monospace, sans-serif;
+  font-size: 15px;
+}
+
+/* =========================================
+   СТРАНИЦА ПОГОДЫ (Weather)
+   ========================================= */
+
+.weather {
+  width: 100%;
+  max-width: 600px;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 5px 5px 0 rgba(37, 70, 83, 0.22);
+  margin-bottom: 25px;
+}
+
+.weather h2 {
+  margin: 0 0 20px;
+  color: var(--ink);
+  font-size: 24px;
+  font-family: "Comic Sans MS", "Trebuchet MS", cursive;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed #a8cf72;
+}
+
+.weather form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.weather input[type="text"] {
+  flex: 1;
+  border: 2px solid #8fb8bd;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-family: inherit;
+  font-size: 15px;
+  background: #fffef8;
+  color: var(--ink);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.weather input[type="text"]:focus {
+  outline: none;
+  border-color: var(--grass-dark);
+  box-shadow: 0 0 0 3px rgba(152, 217, 79, 0.28);
+}
+
+.weather button {
+  border: none;
+  background: var(--grass);
+  color: var(--ink);
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 3px 0 var(--grass-dark);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.weather button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 var(--grass-dark);
+}
+
+.weather button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.weather__error {
+  margin: 10px 0 0;
+  color: var(--coral) !important;
+  font-weight: bold;
+}
+
+.weather__info {
+  background: #f6ffe8;
+  border: 2px solid var(--ink);
+  border-left: 7px solid var(--grass-dark);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 3px 3px 0 rgba(37, 70, 83, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.weather__info h3 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-family: "Comic Sans MS", "Trebuchet MS", cursive;
+  font-size: 20px;
+}
+
+.weather__info p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 16px;
+}
+
+.weather__info strong {
+  color: var(--ink);
+}
+
+/* =========================================
+   ПОДДЕРЖКА ТЁМНОЙ ТЕМЫ (.app.theme-dark)
+   ========================================= */
+
+.app.theme-dark .currency-page,
+.app.theme-dark .weather {
+  border-color: #466d85;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.45);
+}
+
+.app.theme-dark .currency-page h2,
+.app.theme-dark .weather h2 {
+  border-bottom-color: #436e4f;
+}
+
+.app.theme-dark .currency-page table {
+  background: #13232e;
+  border-color: #466d85;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.35);
+}
+
+.app.theme-dark .currency-page th {
+  background: var(--grass);
+  color: #fffef4;
+  border-bottom-color: #466d85;
+}
+
+.app.theme-dark .currency-page td {
+  border-bottom-color: #264356;
+}
+
+.app.theme-dark .currency-page tbody tr:hover {
+  background: #193140;
+}
+
+.app.theme-dark .currency-page td:first-child {
+  color: var(--ink);
+}
+
+.app.theme-dark .weather input[type="text"] {
+  background: #13232e;
+  border-color: #3b5c70;
+  color: var(--ink);
+}
+
+.app.theme-dark .weather input[type="text"]::placeholder {
+  color: #6c92a6;
+}
+
+.app.theme-dark .weather input[type="text"]:focus {
+  border-color: var(--grass-dark);
+  box-shadow: 0 0 0 3px rgba(116, 195, 101, 0.25);
+}
+
+.app.theme-dark .weather button {
+  background: #4b963f;
+  color: #fffef4;
+  box-shadow: 0 3px 0 #265220;
+}
+
+.app.theme-dark .weather button:hover:not(:disabled) {
+  box-shadow: 0 5px 0 #265220;
+}
+
+.app.theme-dark .weather__info {
+  background: #162834;
+  border-color: #466d85;
+  border-left-color: var(--grass-dark);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);
+}
